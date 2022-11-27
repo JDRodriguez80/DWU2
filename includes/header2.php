@@ -11,7 +11,7 @@
 
                 <li><a href="consultar.php">Consultar inscripciones</a></li>
                 <li><a href="index.php">Cerrar sesión</a></li> <!-- agregar el session destroy--->
-                
+
             </ul>
         </nav>
 

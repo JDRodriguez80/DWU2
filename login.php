@@ -1,36 +1,33 @@
 <?php
+require "conexion.php";
 error_reporting(E_ALL ^ E_WARNING);
-$alert="";
-    session_start();
+$alert = "";
+session_start();
 
 
-    //temp login cambiarlo por lo de la base de datos
+//temp login cambiarlo por lo de la base de datos
 
-   $user=$_POST['usuario'];
-   $pass=$_POST['password'];
-   $userReal="resp_escolar";
-   $passReal="unadm_responsable";
-    if(empty($_POST['usuario'])){
-        $alert="el usuario esta vacio";
-    }elseif (empty($_POST['password']))
-    {
-        $alert="password vacio";
+$user = $_POST['usuario'];
+$pass = $_POST['password'];
+$userReal = "resp_escolar";
+$passReal = "unadm_responsable";
+if (empty($_POST['usuario'])) {
+    $alert = "el usuario esta vacio";
+} elseif (empty($_POST['password'])) {
+    $alert = "password vacio";
+} else {
+    if ($user != $userReal || $pass != $passReal) {
+        $alert = "Credenciales invalidas";
+    } else {
+        $_SESSION['active'] = true;
+        $_SESSION['usuario'] = $user;
+        header("LOCATION:administracion.php");
     }
-    else{
-        if($user!=$userReal || $pass!= $passReal){
-            $alert="Credenciales invalidas";
-
-        }else{
-            $_SESSION['active']=true;
-            $_SESSION['usuario']=$user;
-            header("LOCATION:administracion.php");
-        }
-
-
-    }
-    ?>
+}
+?>
 <!DOCTYPE html>
 <html lang="es-mx">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,11 +35,12 @@ $alert="";
     <link rel="stylesheet" href="css/style.css">
     <title>Acceso</title>
 </head>
+
 <body>
-<?php
-include "includes/header.php";
-?>
-<section id="container">
+    <?php
+    include "includes/header.php";
+    ?>
+    <section id="container">
         <form id="log-in" action="" method="post">
 
             <img src="img/logo.png" alt="LogIn">
@@ -52,15 +50,16 @@ include "includes/header.php";
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Password">
             <div class="alerta"><?php echo $alert ?? '';  ?></div>
-            <input class="" type="submit" value="INGRESAR"/>
-           
-            
+            <input class="" type="submit" value="INGRESAR" />
+
+
         </form>
     </section>
-    
+
 </body>
 <footer>
     <?php
     include "includes/footer.php";
     ?></footer>
+
 </html>

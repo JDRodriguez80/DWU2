@@ -125,6 +125,7 @@ logo img:hover{
     z-index: 1000;
 }
 
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -335,7 +336,7 @@ input, select{
     border-radius: 5px;
 }
 footer{
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 50px;
@@ -344,6 +345,7 @@ footer{
     font-size: 12px;
     text-align: end;
     padding-right: 15px;
+    padding-top: 10px;
 
 }
 .edit{
