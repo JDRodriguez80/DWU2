@@ -21,7 +21,7 @@
         <div class="row">
                 <div class="column">
                     <h1>Misión</h1>
-                    <img src=img/niñosestudiando.jpg id="valor" onMouseOver="showText('Mision')" onMouseOut="hide();">
+                    <img src=img/niñosestudiando.jpg id="valor" onMouseOver="" onMouseOut="">
                     <p class="parrafo">Proveer servicios <strong>educativos de calidad</strong> para la comunidad escolar, con un <strong>sentido de servicio y valores</strong> , que permitan formar <strong>futuros mexicanos de calidad</strong> tanto moral como de habilidades elevadas.</p>
             </div>
             <div class="column">
@@ -43,12 +43,9 @@
         </div>
     </div>
     <script>
-        function showText(text){
-            document.getElementById("valor").innerHTML=text;
-        }
-        function hide(){
-            document.getElementById("valor").innerHTML="";
-        }
+       function info(valor){
+           document.getElementById('valor').style.visibility=true;
+       }
      </script>
 
 </body>

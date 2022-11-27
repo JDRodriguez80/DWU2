@@ -1,9 +1,13 @@
 <?php
-    $host="localhost";
-    $user="root";
-    $pass="";
-    $db="dpw1";
-
-    //definiendoio conexxion
 
 
+$hostname = 'localhost';
+$username = 'root';
+$pass = '';
+$db = 'escuela';
+$conn = @mysqli_connect($hostname, $username, $pass, $db);
+if (!$conn) {
+    echo "error en la conexión ";
+} else {
+
+}

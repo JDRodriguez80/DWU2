@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1>JDR 2022 | PW1</h1>
+    <h1>Jesús Darío Rodríguez | ES1822021661 | PW1 | <?php echo date("d/m/Y");?> </h1>
 </body>
 
 </html>

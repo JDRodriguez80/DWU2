@@ -18,6 +18,13 @@ header{
     margin: auto;
 
 }
+.alerta{
+    color: red;
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 1rem;
+
+}
 logo{
     float: left;
     padding: 5px 20px 0;
@@ -124,6 +131,7 @@ logo img:hover{
     transition: .3s linear;
     z-index: 1000;
 }
+
 
 
 /* Clear floats after the columns */
