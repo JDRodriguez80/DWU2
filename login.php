@@ -1,29 +1,13 @@
 <?php
-require "conexion.php";
-error_reporting(E_ALL ^ E_WARNING);
-$alert = "";
 session_start();
 
+$error = "";
 
-//temp login cambiarlo por lo de la base de datos
-
-$user = $_POST['usuario'];
-$pass = $_POST['password'];
-$userReal = "resp_escolar";
-$passReal = "unadm_responsable";
-if (empty($_POST['usuario'])) {
-    $alert = "el usuario esta vacio";
-} elseif (empty($_POST['password'])) {
-    $alert = "password vacio";
-} else {
-    if ($user != $userReal || $pass != $passReal) {
-        $alert = "Credenciales invalidas";
-    } else {
-        $_SESSION['active'] = true;
-        $_SESSION['usuario'] = $user;
-        header("LOCATION:administracion.php");
-    }
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
+    header('LOCATION:adminstracion.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es-mx">
@@ -39,6 +23,10 @@ if (empty($_POST['usuario'])) {
 <body>
     <?php
     include "includes/header.php";
+    if (isset($_SESSION["error"])) {
+        unset($_SESSION["error"]);
+        $error = "Error de credenciales ";
+    }
     ?>
     <section id="container">
         <form id="log-in" action="" method="post">
